@@ -1,0 +1,151 @@
+/* ==UserStyle==
+@name           ChatGPT Catppuccin
+@namespace      github.com/catppuccin/chatgpt
+@version        1.0.0
+@description    Soothing Pastel Theme for ChatGPT
+@author         Catppuccin
+@preprocessor   stylus
+@var select lighttheme "Light Theme" ["latte:Latte*", "frappe:Frappe", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darktheme "Dark Theme" ["latte:Latte", "frappe:Frappe", "macchiato:Macchiato", "mocha:Mocha*"]
+==/UserStyle== */
+
+@-moz-document domain("chat.openai.com") {
+    @import url("https://unpkg.com/@catppuccin/palette@0.1.6/css/catppuccin.css");
+    colourscheme(theme) {
+        --ctp-rosewater: var(--ctp- + theme + "-rosewater");
+        --ctp-flamingo: var(--ctp- + theme + "-flamingo");
+        --ctp-pink: var(--ctp- + theme + "-pink");
+        --ctp-mauve: var(--ctp- + theme + "-mauve");
+        --ctp-red: var(--ctp- + theme + "-red");
+        --ctp-maroon: var(--ctp- + theme + "-maroon");
+        --ctp-peach: var(--ctp- + theme + "-peach");
+        --ctp-yellow: var(--ctp- + theme + "-yellow");
+        --ctp-green: var(--ctp- + theme + "-green");
+        --ctp-teal: var(--ctp- + theme + "-teal");
+        --ctp-sky: var(--ctp- + theme + "-sky");
+        --ctp-sapphire: var(--ctp- + theme + "-sapphire");
+        --ctp-blue: var(--ctp- + theme + "-blue");
+        --ctp-lavender: var(--ctp- + theme + "-lavender");
+        --ctp-text: var(--ctp- + theme + "-text");
+        --ctp-subtext0: var(--ctp- + theme + "-subtext0");
+        --ctp-overlay2: var(--ctp- + theme + "-overlay2");
+        --ctp-overlay0: var(--ctp- + theme + "-overlay0");
+        --ctp-surface2: var(--ctp- + theme + "-surface2");
+        --ctp-surface1: var(--ctp- + theme + "-surface1");
+        --ctp-surface0: var(--ctp- + theme + "-surface0");
+        --ctp-base: var(--ctp- + theme + "-base");
+        --ctp-mantle: var(--ctp- + theme + "-mantle");
+        --ctp-crust: var(--ctp- + theme + "-crust");
+
+        @import url("https://unpkg.com/@catppuccin/highlightjs/css/catppuccin-" + theme +".css") !important;
+  }
+
+  .light body, .light html {
+    colourscheme(lighttheme)
+  }
+
+
+  :root, .dark body, .dark html {
+    colourscheme(darktheme)
+  }
+  
+   /* Main page */
+   div[class*="bg-gray-"]:not([class*="bg-gray-900"]):not([class*="bg-gray-700"]):not(.bg-black .bg-gray-800), div[class*="bg-vert-dark-gradient"] {
+        background: var(--ctp-base) !important;
+    }
+  
+  /* Sidebar */
+  div[class*="bg-gray-900"] {
+    background-color: var(--ctp-mantle) !important;
+  }
+
+  .bg-gray-900 .bg-gray-800 {
+    background-color: var(--ctp-surface0) !important;
+  }
+
+  .bg-gradient-to-l {
+    background: none;
+  }
+
+  /* Upgrade Plan */
+  .shim-yellow {
+    display: none;
+  }
+  
+  /* Search */
+  div[class*="bg-gray-700"] {
+      background-color: var(--ctp-surface0) !important;
+  }
+  
+  [class*="text-gray-"], [class*="text-white"]:not(.btn-primary .text-white) {
+    color: var(--ctp-text) !important;
+  }
+  
+  div[class*="border-gray"], div[class*="border-white"] {
+      border-color: var(--ctp-overlay0) !important;
+  }
+  
+  input::placeholder, textarea::placeholder {
+    color: var(--ctp-overlay0);
+  }
+  
+  input, textarea {
+    color: var(--ctp-text);
+  }
+  
+  [class*="bg-white/5"] {
+    background-color: var(--ctp-surface0) !important;
+  }
+
+  /* Bot messages */
+  .prose {
+    --tw-prose-body: var(--ctp-text) !important;
+    --tw-prose-bold: var(--ctp-text) !important;
+    --tw-prose-code: var(--ctp-text) !important;
+    --tw-prose-links: var(--ctp-text) !important;
+    --tw-prose-headings: var(--ctp-overlay1) !important;
+  }
+
+  .bg-black {
+    background-color: var(--ctp-crust) !important;
+  }
+  
+  .bg-black .bg-gray-800 {
+    background-color: var(--ctp-surface0) !important;
+  }
+
+  code.hljs, code[class*="language-"], pre[class*="language-"] {
+    color: var(--ctp-text) !important;
+  }
+
+  .btn-neutral {
+    background-color: var(--ctp-surface1) !important;
+    color: var(--ctp-text) !important;
+  }
+
+  .btn-primary {
+    background-color: var(--ctp-green) !important;
+    color: var(--ctp-crust) !important;
+  }
+
+  .btn-primary .text-white {
+      color: var(--ctp-crust) !important;
+  }
+
+  .text-2xl {
+    color: var(--ctp-text) !important;
+  }
+
+  .dark [class*="bg-yellow-"] {
+    color: var(--ctp-crust) !important;
+  }
+
+  .light [class*="bg-yellow-"] {
+    color: var(--ctp-text) !important;
+  }
+
+
+  [class*="text-green"] {
+    color: var(--ctp-green) !important;
+  }
+}
